@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView_Account_Manager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80000000"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_gohome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Menu" />
+
+            <TextView
+                android:id="@+id/label_Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:text="Username: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="iacaneda" />
+
+            <TextView
+                android:id="@+id/label_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:text="Email: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="iacaneda@buffalo.edu" />
+
+            <TextView
+                android:id="@+id/label_BillingAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:text="Billing Address: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_StreetAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="25sp"
+                android:text="Street Address: " />
+
+            <EditText
+                android:id="@+id/et_streetadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="555 Cherry Lane" />
+
+            <TextView
+                android:id="@+id/label_City"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="25sp"
+                android:text="City: " />
+
+            <EditText
+                android:id="@+id/et_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Buffalo" />
+
+            <TextView
+                android:id="@+id/label_State"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="25sp"
+                android:text="State/Province:" />
+
+            <EditText
+                android:id="@+id/et_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="NY" />
+
+            <TextView
+                android:id="@+id/label_Zip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="25sp"
+                android:text="Zip/Postal: " />
+
+            <EditText
+                android:id="@+id/et_zipcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="14261" />
+
+            <TextView
+                android:id="@+id/label_Country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50sp"
+                android:layout_marginTop="25sp"
+                android:text="Country:" />
+
+            <EditText
+                android:id="@+id/et_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="United States" />
+
+            <TextView
+                android:id="@+id/label_MyCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:text="Your Stored Cards: "
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_addCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:text="+ Add New Card" />
+
+            <HorizontalScrollView
+                android:id="@+id/hozScroll_Cards"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20sp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/img_visa"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/visaiconofficial" />
+
+                    <ImageButton
+                        android:id="@+id/img_mastercard"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/mastercardofficial" />
+
+                    <ImageButton
+                        android:id="@+id/img_amex"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/amexcon" />
+
+                    <ImageButton
+                        android:id="@+id/img_paypal"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/paypalicon" />
+
+                    <ImageButton
+                        android:id="@+id/img_GenericID"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/genericidoffic" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/label_YourTranspo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:text="Your Transportation: "
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_addTranspo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:text="+ Add New Transportation" />
+
+            <HorizontalScrollView
+                android:id="@+id/hozScroll_Transpo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20sp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/img_metrocard"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/metrocard" />
+
+                    <ImageButton
+                        android:id="@+id/img_nfta"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_marginLeft="20sp"
+                        android:layout_weight="1"
+                        android:background="#80000000"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/nfta" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
