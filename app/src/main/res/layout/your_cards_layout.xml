@@ -7,12 +7,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_gohome"
@@ -49,46 +50,46 @@
 
                     <ImageButton
                         android:id="@+id/img_visa"
-                        app:srcCompat="@drawable/visaiconofficial"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:background="#80000000"
-                        android:scaleType="centerCrop" />
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/visaiconofficial" />
 
                     <ImageButton
                         android:id="@+id/img_mastercard"
-                        app:srcCompat="@drawable/mastercardofficial"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
-                        android:background="#80000000"
-                        android:scaleType="centerCrop" />
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/mastercardofficial" />
 
                     <ImageButton
                         android:id="@+id/img_amex"
-                        app:srcCompat="@drawable/amexcon"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:layout_weight="1"
-                        android:background="#80000000"
-                        android:scaleType="centerCrop" />
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/amexcon" />
 
                     <ImageButton
                         android:id="@+id/img_paypal"
-                        app:srcCompat="@drawable/paypalicon"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:layout_weight="1"
-                        android:background="#80000000"
-                        android:scaleType="centerCrop" />
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/paypalicon" />
 
                     <ImageButton
                         android:id="@+id/img_GenericID"
-                        app:srcCompat="@drawable/genericidoffic"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:layout_weight="1"
-                        android:background="#80000000"
-                        android:scaleType="centerCrop" />
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/genericidoffic" />
 
                 </LinearLayout>
             </HorizontalScrollView>

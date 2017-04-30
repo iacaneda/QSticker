@@ -1,6 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+                <LinearLayout
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <Switch
+                                android:id="@+id/auto_refill_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10sp"
+                                android:contentDescription="Refill balance when it reaches your set minimum."
+                                android:text="Auto Refill"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textOff="Off"
+                                android:textOn="On"
+                                android:thumbTint="@android:color/holo_green_dark"
+                                android:trackTint="@android:color/holo_green_dark" />
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="300sp"
+                                android:layout_height="275sp"
+                                android:layout_marginLeft="50sp"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ubid" />
+
+                            <TextView
+                                android:id="@+id/campus_cash"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="SUNY at Buffalo Campus Cash"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/ub_id_num_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="UB ID: 500*****"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/exp_date_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20sp"
+                                android:text="Current Balance: $32.89"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="18sp" />
+
+                            <Button
+                                android:id="@+id/add_money_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/holo_green_dark"
+                                android:text="Add Funds" />
+
+                            <Button
+                                android:id="@+id/edit_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Edit Card Information (Will be asked to enter QSticker Password)."
+                                android:text="Edit Card" />
+
+                            <Button
+                                android:id="@+id/delete_card_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/holo_red_dark"
+                                android:text="Delete Card" />
+
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ub_cardholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Isabelle Anne Caneda" />
+
+                    <TextView
+                        android:id="@+id/class_standing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Undergraduate" />
+
+                    <TextView
+                        android:id="@+id/library_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Library ID: 5081-2803-0051-2448" />
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 </LinearLayout>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@android:color/white">
 
         <LinearLayout
@@ -15,59 +16,53 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_gohome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Main Menu" />
-
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/select_card_type_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25sp"
-                android:layout_marginTop="25sp"
-                android:text="Your Transportation: "
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="Select Card Type"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:text="+ Add New Transportation" />
-
             <HorizontalScrollView
-                android:id="@+id/hozScroll_Transpo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20sp">
+                android:layout_weight="1"
+                android:background="@android:color/background_light">
 
                 <LinearLayout
+                    android:id="@+id/hoz_create_card"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="120sp"
+                    android:background="@android:color/white"
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/img_metrocard"
-                        android:layout_width="100sp"
-                        android:layout_height="100sp"
-                        android:background="@android:color/transparent"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/metrocard" />
-
-                    <ImageButton
-                        android:id="@+id/img_nfta"
-                        android:layout_width="100sp"
-                        android:layout_height="100sp"
-                        android:layout_marginLeft="20sp"
+                        android:id="@+id/imageButton6"
+                        android:layout_width="175sp"
+                        android:layout_height="200sp"
+                        android:layout_marginLeft="15sp"
+                        android:layout_marginRight="10sp"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:scaleType="centerInside"
-                        app:srcCompat="@drawable/nfta" />
+                        app:srcCompat="@drawable/creditcardgeneric" />
 
+                    <ImageButton
+                        android:id="@+id/imageButton7"
+                        android:layout_width="175sp"
+                        android:layout_height="200sp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/genericidoffic" />
                 </LinearLayout>
             </HorizontalScrollView>
+
         </LinearLayout>
     </ScrollView>
 

@@ -7,19 +7,23 @@
     <ScrollView
         android:id="@+id/scrollView_Account_Manager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#80000000"
+            android:backgroundTint="@android:color/white"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_gohome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Main Menu" />
+                android:foregroundTint="@android:color/black"
+                android:text="Main Menu"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/label_Username"
@@ -27,7 +31,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="25sp"
+                android:foregroundTint="@android:color/black"
                 android:text="Username: "
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
             <EditText
@@ -36,8 +42,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="iacaneda" />
+                android:text="iacaneda"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/label_Email"
@@ -45,7 +53,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="25sp"
+                android:foregroundTint="@android:color/black"
                 android:text="Email: "
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
             <EditText
@@ -54,8 +64,56 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="iacaneda@buffalo.edu" />
+                android:text="iacaneda@buffalo.edu"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/curr_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:foregroundTint="@android:color/black"
+                android:text="Current Password:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/curr_password_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter password to save changes."
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/new_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:foregroundTint="@android:color/black"
+                android:text="New Password:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/new_pass_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter new password."
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/confirm_new_pass_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Re-enter new password."
+                android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/label_BillingAddress"
@@ -63,7 +121,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="25sp"
+                android:foregroundTint="@android:color/black"
                 android:text="Billing Address: "
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -72,7 +132,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50sp"
                 android:layout_marginTop="25sp"
-                android:text="Street Address: " />
+                android:foregroundTint="@android:color/black"
+                android:text="Street Address: "
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/et_streetadd"
@@ -80,8 +142,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="555 Cherry Lane" />
+                android:text="555 Cherry Lane"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/label_City"
@@ -89,7 +153,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50sp"
                 android:layout_marginTop="25sp"
-                android:text="City: " />
+                android:foregroundTint="@android:color/black"
+                android:text="City: "
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/et_city"
@@ -97,8 +163,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="Buffalo" />
+                android:text="Buffalo"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/label_State"
@@ -106,7 +174,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50sp"
                 android:layout_marginTop="25sp"
-                android:text="State/Province:" />
+                android:foregroundTint="@android:color/black"
+                android:text="State/Province:"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/et_state"
@@ -114,8 +184,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="NY" />
+                android:text="NY"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/label_Zip"
@@ -123,7 +195,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50sp"
                 android:layout_marginTop="25sp"
-                android:text="Zip/Postal: " />
+                android:foregroundTint="@android:color/black"
+                android:text="Zip/Postal: "
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/et_zipcode"
@@ -131,8 +205,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="14261" />
+                android:text="14261"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/label_Country"
@@ -140,7 +216,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50sp"
                 android:layout_marginTop="25sp"
-                android:text="Country:" />
+                android:foregroundTint="@android:color/black"
+                android:text="Country:"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/et_country"
@@ -148,8 +226,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65sp"
                 android:ems="10"
+                android:foregroundTint="@android:color/black"
                 android:inputType="textPersonName"
-                android:text="United States" />
+                android:text="United States"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/label_MyCards"
@@ -157,7 +237,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="25sp"
+                android:foregroundTint="@android:color/black"
                 android:text="Your Stored Cards: "
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
             <Button
@@ -165,7 +247,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
-                android:text="+ Add New Card" />
+                android:foregroundTint="@android:color/black"
+                android:text="+ Add New Card"
+                android:textColor="@android:color/white" />
 
             <HorizontalScrollView
                 android:id="@+id/hozScroll_Cards"
@@ -183,6 +267,7 @@
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:background="#80000000"
+                        android:backgroundTint="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/visaiconofficial" />
 
@@ -191,6 +276,7 @@
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:background="#80000000"
+                        android:backgroundTint="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/mastercardofficial" />
 
@@ -200,6 +286,7 @@
                         android:layout_height="100sp"
                         android:layout_weight="1"
                         android:background="#80000000"
+                        android:backgroundTint="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/amexcon" />
 
@@ -209,6 +296,7 @@
                         android:layout_height="100sp"
                         android:layout_weight="1"
                         android:background="#80000000"
+                        android:backgroundTint="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/paypalicon" />
 
@@ -218,6 +306,7 @@
                         android:layout_height="100sp"
                         android:layout_weight="1"
                         android:background="#80000000"
+                        android:backgroundTint="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/genericidoffic" />
 
@@ -244,6 +333,7 @@
                 android:id="@+id/hozScroll_Transpo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="40sp"
                 android:layout_marginLeft="20sp">
 
                 <LinearLayout
@@ -256,6 +346,7 @@
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:background="#80000000"
+                        android:backgroundTint="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/metrocard" />
 
@@ -266,11 +357,34 @@
                         android:layout_marginLeft="20sp"
                         android:layout_weight="1"
                         android:background="#80000000"
-                        android:scaleType="centerCrop"
+                        android:backgroundTint="@android:color/transparent"
+                        android:scaleType="centerInside"
                         app:srcCompat="@drawable/nfta" />
 
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/save_changes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Changes"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/help_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Help"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/delete_account_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:text="Delete Account"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </ScrollView>
