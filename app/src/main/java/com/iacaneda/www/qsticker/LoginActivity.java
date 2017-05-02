@@ -3,6 +3,7 @@ package com.iacaneda.www.qsticker;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.Image;
@@ -25,6 +26,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -65,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private View mHomeView;
-
+    private View mAddCardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,12 +134,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        View view = this.getCurrentFocus();
+        if (view!=null){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(),InputMethodManager.HIDE_IMPLICIT_ONLY);
+        }
+
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         mHomeView = findViewById(R.id.user_home_layout);
 
 
-    }
+ }
 
     private void createHomeScreen(){
         setContentView(R.layout.activity_home);
@@ -175,6 +184,14 @@ public class LoginActivity extends AppCompatActivity {
                 createHomeScreen();
             }
         });
+        Button addNewCard_btn = (Button)findViewById(R.id.btn_pay_add_new_card);
+        addNewCard_btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createCardStartScreen();
+
+            }
+        });
     }
     private void createGoScreen(){
         setContentView(R.layout.your_transpo_layout);
@@ -184,6 +201,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 setContentView(R.layout.activity_home);
                 createHomeScreen();
+            }
+        });
+        Button addTranspoCard = (Button) findViewById(R.id.add_new_transpo_btn);
+        addTranspoCard.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createAddTranspo();
             }
         });
     }
@@ -197,6 +221,40 @@ public class LoginActivity extends AppCompatActivity {
                 createHomeScreen();
             }
         });
+    }
+    private void createCardStartScreen(){
+        setContentView(R.layout.create_card_selection);
+        Button home = (Button) findViewById(R.id.btn_gohome);
+        home.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_home);
+                createHomeScreen();
+            }
+        });
+        ImageButton addNewCard = (ImageButton)findViewById(R.id.add_new_credit_or_debit_imgbtn);
+        addNewCard.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createAddCard();
+            }
+        });
+        ImageButton addNewBal = (ImageButton)findViewById(R.id.add_new_bal_card_imgbtn);
+        addNewBal.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createAddBalance();
+            }
+        });
+    }
+    private void createAddCard(){
+        setContentView(R.layout.add_new_card);
+    }
+    private void createAddBalance(){
+        setContentView(R.layout.add_new_balance);
+    }
+    private void createAddTranspo(){
+        setContentView(R.layout.add_new_transpo);
     }
 
     /**
