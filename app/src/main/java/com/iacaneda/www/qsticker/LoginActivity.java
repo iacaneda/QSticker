@@ -30,8 +30,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.iacaneda.www.qsticker.Intents.Home;
@@ -192,6 +195,25 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        /**MasterCard**/
+        ImageButton mastercard  = (ImageButton)findViewById(R.id.img_mastercard);
+        mastercard.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createMastercardOverview();
+            }
+        });
+
+        /**Campus Cash**/
+        final ImageButton campuscash = (ImageButton)findViewById(R.id.img_GenericID);
+        campuscash.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createCampusCashOverview();
+            }
+        });
+
     }
     private void createGoScreen(){
         setContentView(R.layout.your_transpo_layout);
@@ -208,6 +230,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createAddTranspo();
+            }
+        });
+
+        /**MetroCard**/
+        ImageButton mta = (ImageButton)findViewById(R.id.img_metrocard);
+        mta.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createMTACardOverview();
             }
         });
     }
@@ -249,13 +280,152 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void createAddCard(){
         setContentView(R.layout.add_new_card);
+        Button add = (Button)findViewById(R.id.add_Card_btn);
+        add.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPayScreen();
+            }
+        });
+        Button cancel = (Button)findViewById(R.id.cancel_btn_card);
+        cancel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPayScreen();
+            }
+        });
     }
     private void createAddBalance(){
         setContentView(R.layout.add_new_balance);
+        Spinner campusSpin = (Spinner)findViewById(R.id.spinner_campus);
+        String[] campuses = new String[]{"University at Buffalo","Daemon College","Buffalo State College", "Erie Community College","SUNY Cortland","SUNY Geneseo"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, campuses);
+        campusSpin.setAdapter(adapter);
+        campusSpin.setSelection(0);
+
+
+        Button add = (Button)findViewById(R.id.add_balance_Card_btn);
+        add.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPayScreen();
+            }
+        });
+        Button cancel = (Button)findViewById(R.id.cancel_btn_bal);
+        cancel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPayScreen();
+            }
+        });
     }
+
     private void createAddTranspo(){
         setContentView(R.layout.add_new_transpo);
+
+        /**Tranportation Provider Spinner**/
+        Spinner dropdown = (Spinner)findViewById(R.id.transpo_provider_spinner);
+        String[] transportation_providers = new String[]{"MTA Metrocard", "NFTA Metro Rail/Bus", "Long Island Rail Road (LIRR)"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, transportation_providers);
+        dropdown.setAdapter(adapter);
+        dropdown.setSelection(0);
+
+
+        /*Starting Balance Spinner*/
+        Spinner startBal = (Spinner)findViewById(R.id.spinner_start_bal);
+        String[] startBalOptions = new String[]{"$0", "$10", "$15", "$20", "$25", "$30","$40","$50","$60", "$70","$80","$90","$100"};
+        ArrayAdapter<String> adap_StartBal = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, startBalOptions);
+        startBal.setAdapter(adap_StartBal);
+        startBal.setSelection(0);
+
+
+        /*Auto Refill Balance Spinner*/
+        final Spinner refillBal = (Spinner)findViewById(R.id.spinner_refill_amt);
+        String[] refillBal_options = new String[]{"$0", "$10", "$15", "$20", "$25", "$30","$40","$50","$60", "$70","$80","$90","$100"};
+        ArrayAdapter<String> adap_refill = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, refillBal_options);
+        refillBal.setAdapter(adap_refill);
+        refillBal.setSelection(0);
+
+        /*Auto Refill Switch*/
+        Switch autoRefill = (Switch)findViewById(R.id.auto_refill_transpo_switch);
+        autoRefill.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                refillBal.setVisibility(View.VISIBLE);
+            }
+        });
+
+        /*Expiration Date Spinners*/
+        Spinner expmonth = (Spinner)findViewById(R.id.exp_month_spinner);
+        String[] months = new String[]{"01","02","03","04","05","06","07","08","09","10","11","12"};
+        ArrayAdapter<String> adap_expmonth = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, months);
+        expmonth.setAdapter(adap_expmonth);
+        expmonth.setSelection(0);
+
+        Spinner expDay = (Spinner)findViewById(R.id.exp_day_spinner);
+        String[] days = new String[]{"01","02","03","04","05","06","07","08","09","10","11","12",
+                        "13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
+        ArrayAdapter<String> adap_expday = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, days);
+        expDay.setAdapter(adap_expday);
+        expDay.setSelection(0);
+
+        Spinner expyear = (Spinner)findViewById(R.id.exp_year_spinner);
+        String[] years = new String[]{"2017","2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"};
+        ArrayAdapter<String> adap_expyear = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, years);
+        expyear.setAdapter(adap_expyear);
+        expyear.setSelection(0);
+
+
+        Button add = (Button)findViewById(R.id.add_button);
+        add.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createGoScreen();
+            }
+        });
+        Button cancel = (Button)findViewById(R.id.cancel_button);
+        cancel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createGoScreen();
+            }
+        });
+
+
+
+
     }
+    private void createMTACardOverview(){
+        setContentView(R.layout.this_transpo_layout);
+        Button back = (Button)findViewById(R.id.back);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createGoScreen();
+            }
+        });
+    }
+    private void createMastercardOverview(){
+        setContentView(R.layout.this_card_layout);
+        Button back = (Button)findViewById(R.id.back_cards);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPayScreen();
+            }
+        });
+    }
+    private void createCampusCashOverview(){
+        setContentView(R.layout.this_money_layout);
+        Button back = (Button)findViewById(R.id.back_cards);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPayScreen();
+            }
+        });
+    }
+
 
     /**
      * Attempts to sign in or register the account specified by the login form.

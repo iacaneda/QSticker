@@ -1,6 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:id="@+id/transpo_creation_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/title_add_new_transpo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:background="@android:color/transparent"
+                android:text="Add a New Transportation Card"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_Select_Transpo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="Select a Transportation Provider:"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Spinner
+                android:id="@+id/transpo_provider_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="?attr/colorPrimaryDark"
+                android:focusable="true"
+                android:nestedScrollingEnabled="true"
+                android:scrollbarAlwaysDrawVerticalTrack="true" />
+
+            <TextView
+                android:id="@+id/label_enter_start_bal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:labelFor="@+id/enter_start_balance"
+                android:text="Enter Balance to Add (Optional):"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Spinner
+                android:id="@+id/spinner_start_bal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="?attr/colorPrimaryDark"
+                android:focusable="true"
+                android:nestedScrollingEnabled="true"
+                android:scrollbarAlwaysDrawVerticalTrack="true" />
+
+            <TextView
+                android:id="@+id/label_tix_combo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="Combine with an Existing Balance (Optional):"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/how_to_combo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="Enter the ID number on the physical ticket/swipe card of the selected transportation provider."
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/old_tix_ID_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/label_exp_date_transpo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="Expiration Date:"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/exp_date_hoz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/exp_month_spinner"
+                        android:layout_width="50sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10sp"
+                        android:layout_marginLeft="20sp"
+                        android:layout_weight="1"
+                        android:background="?attr/colorPrimaryDark"
+                        android:focusable="true"
+                        android:nestedScrollingEnabled="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_weight="1"
+                        android:text="/"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/exp_day_spinner"
+                        android:layout_width="50sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10sp"
+                        android:layout_marginLeft="20sp"
+                        android:layout_weight="1"
+                        android:background="?attr/colorPrimaryDark"
+                        android:focusable="true"
+                        android:nestedScrollingEnabled="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:layout_marginRight="5sp"
+                        android:layout_weight="1"
+                        android:text="/"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/exp_year_spinner"
+                        android:layout_width="100sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10sp"
+                        android:layout_marginLeft="20sp"
+                        android:layout_weight="1"
+                        android:background="?attr/colorPrimaryDark"
+                        android:focusable="true"
+                        android:nestedScrollingEnabled="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/label_Select_Payment_Method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="25sp"
+                android:background="@android:color/transparent"
+                android:text="Select Your Method of Payment:"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/hozScroll_Cards"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20sp"
+                android:background="@android:color/transparent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/img_visa"
+                        app:srcCompat="@drawable/visaiconofficial"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/img_mastercard"
+                        app:srcCompat="@drawable/mastercardofficial"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/img_amex"
+                        app:srcCompat="@drawable/amexcon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/img_paypal"
+                        app:srcCompat="@drawable/paypalicon"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/img_GenericID"
+                        app:srcCompat="@drawable/genericidoffic"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/label_autorefill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="Set for Auto Refill?"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/what_is_autorefill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="If this new transportation account balance falls below $5, we will auto refill your balance with a specified amount from the credit card you've selected above."
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <Switch
+                android:id="@+id/auto_refill_transpo_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Refill balance when it reaches your set minimum."
+                android:gravity="end"
+                android:text="Auto Refill"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorPrimaryDark"
+                android:textOff="Off"
+                android:textOn="On"
+                android:thumbTint="@android:color/holo_green_dark"
+                android:trackTint="@android:color/holo_green_dark" />
+
+            <TextView
+                android:id="@+id/label_select_refill_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:labelFor="@+id/transpo_provider_spinner"
+                android:text="Select an auto refill amount:"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Spinner
+                android:id="@+id/spinner_refill_amt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="?attr/colorPrimaryDark"
+                android:focusable="true"
+                android:nestedScrollingEnabled="true"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:text="Add This Transportation" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:text="Cancel" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

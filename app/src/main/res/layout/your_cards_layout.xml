@@ -31,7 +31,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_pay_add_new_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
@@ -49,20 +49,29 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/img_visa"
-                        android:layout_width="100sp"
-                        android:layout_height="100sp"
-                        android:background="@android:color/transparent"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/visaiconofficial" />
-
-                    <ImageButton
                         android:id="@+id/img_mastercard"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/mastercardofficial" />
+
+                    <ImageButton
+                        android:id="@+id/img_GenericID"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ubid" />
+
+                    <ImageButton
+                        android:id="@+id/img_visa"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/visaiconofficial" />
 
                     <ImageButton
                         android:id="@+id/img_amex"
@@ -81,15 +90,6 @@
                         android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/paypalicon" />
-
-                    <ImageButton
-                        android:id="@+id/img_GenericID"
-                        android:layout_width="100sp"
-                        android:layout_height="100sp"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/genericidoffic" />
 
                 </LinearLayout>
             </HorizontalScrollView>

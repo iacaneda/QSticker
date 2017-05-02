@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/create_card_start"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -42,7 +43,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/imageButton6"
+                        android:id="@+id/add_new_credit_or_debit_imgbtn"
                         android:layout_width="175sp"
                         android:layout_height="200sp"
                         android:layout_marginLeft="15sp"
@@ -53,15 +54,25 @@
                         app:srcCompat="@drawable/creditcardgeneric" />
 
                     <ImageButton
-                        android:id="@+id/imageButton7"
+                        android:id="@+id/add_new_bal_card_imgbtn"
                         android:layout_width="175sp"
                         android:layout_height="200sp"
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/genericidoffic" />
+
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/btn_gohome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:foregroundTint="@android:color/black"
+                android:text="Main Menu"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </ScrollView>

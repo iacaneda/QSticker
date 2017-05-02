@@ -58,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:foregroundTint="@android:color/black"
-                android:textColorHint="@color/colorPrimaryDark">
+                android:textColorHint="@color/colorPrimaryDark"
+                >
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
@@ -73,6 +74,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/password_textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:foregroundTint="@android:color/black"
